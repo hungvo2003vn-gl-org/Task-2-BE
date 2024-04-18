@@ -1,0 +1,1581 @@
+{
+	"info": {
+		"_postman_id": "e5ebedca-3545-42dd-ad50-4b8b0043e719",
+		"name": "Task-2-BE",
+		"description": "- **Set Environments**\n    \n    - server : [https://task-2-be.onrender.com](https://task-2-be.onrender.comEndFragment)\n    - accessToken: perform the login action to get accessToken (Bearer Token)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29097793"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john.doe@gmail.com\",\r\n    \"password\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/v1/users/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john.doe@gmail.com\",\r\n    \"password\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:49:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763be33aa8b797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21b-BFnXvLLIWKdrX90MrVsrqWkjtYM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "45a2a735-7f39-45ef"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyMGFiMTIxZjA0ZGYzYTQ0ODRmNDE0Iiwic2Vzc2lvbl9pZCI6ImRlMTVhNzk0LTg1MDEtNDRmOS04NjQ0LWMxYjkwYWU2MDI3MCIsImlhdCI6MTcxMzQzMzc0NiwiZXhwIjoxNzE0MDM4NTQ2fQ.az51fBonanYFjd_Bwe2qtS-Yi-3epIq4IVaaE-DF6Hg\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyMGFiMTIxZjA0ZGYzYTQ0ODRmNDE0Iiwic2Vzc2lvbl9pZCI6ImRlMTVhNzk0LTg1MDEtNDRmOS04NjQ0LWMxYjkwYWU2MDI3MCIsImlhdCI6MTcxMzQzMzc0NiwiZXhwIjoxNzE2MDI1NzQ2fQ.SopTxEKc-XfC2QIVwdkfOa9HXTSeYZ7_N4e0zVmpQyY\"\n    }\n}"
+				},
+				{
+					"name": "login invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"john.doegmail.com\",\r\n    \"password\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:49:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763bed30f4f797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-5vA4np5XBbnAl2nRTxX1nvNxEtM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b8e4450a-6ea4-449d"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"email must be an email\"\n}"
+				},
+				{
+					"name": "login wrong password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john.doe@gmail.com\",\r\n    \"password\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:50:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c03a089f797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-8w4tZ3/6tjIXVccXMrNqhxokdog\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "43db854b-bb28-4a07"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password is not correct\"\n}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"henry.cavill@gmail.com\",\r\n    \"username\": \"henry.cavill2\",\r\n    \"password\": \"1\",\r\n    \"birthdate\": \"2003-02-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/v1/users/register",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"henry.cavill2@gmail.com\",\r\n    \"username\": \"henry.cavill2\",\r\n    \"password\": \"1\",\r\n    \"birthdate\": \"2003-02-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:52:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c2cd4e5c797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8e-Kb3zCy03u2yP+ed81/PvrWQW7jw\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "7b9b82e6-e703-4f08"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"6620ed4f527d6c411bc1dca4\",\n        \"username\": \"henry.cavill2\",\n        \"email\": \"henry.cavill2@gmail.com\",\n        \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n    }\n}"
+				},
+				{
+					"name": "register missing field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"henry.cavill2@gmail.com\",\r\n    \"username\": \"henry.cavill2\",\r\n    \"password\": \"1\"\r\n    // \"birthdate\": \"2003-02-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:52:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c392bac0797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-nVpoT6lwgxJb9mmVOBNVHxJIx/I\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "a1ad3b1d-7057-4ae1"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"birthdate should not be empty\"\n}"
+				},
+				{
+					"name": "register existed email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"henry.cavill@gmail.com\",\r\n    \"username\": \"henry.cavill2\",\r\n    \"password\": \"1\",\r\n    \"birthdate\": \"2003-02-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:53:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c48ebcdb797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-RVNRChM/Sv0dt6IIz5rlDF1qk+o\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "bfae870a-8d42-47e9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The email has been registered\"\n}"
+				}
+			]
+		},
+		{
+			"name": "info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/v1/users/info",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"info"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "info ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users/info",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"info"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:54:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c5bccd80797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"84-/cZqWZbR2svfxv8Lz1MUlyvjXmA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "1553f53d-82cb-4859"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"6620ab121f04df3a4484f414\",\n        \"username\": \"john.doe\",\n        \"email\": \"john.doe@gmail.com\",\n        \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n    }\n}"
+				},
+				{
+					"name": "info Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users/info",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"info"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:54:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c62708f7797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "5780865e-ff19-4748"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/v1/users?name=henr&email=cavill",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "henr"
+						},
+						{
+							"key": "email",
+							"value": "cavill"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getUsers getAll #1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:56:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c87c9e8e797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"294-26stdDWl9g7K7efq7tgbxZjmiIk\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "fb14b434-4f21-458a"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ab121f04df3a4484f414\",\n            \"username\": \"john.doe\",\n            \"email\": \"john.doe@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620bdcf080b34bc38c16934\",\n            \"username\": \"john.doe2\",\n            \"email\": \"john.doe2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ebdc527d6c411bc1dc8c\",\n            \"username\": \"robert.downey\",\n            \"email\": \"robert.downey@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ec7a527d6c411bc1dc99\",\n            \"username\": \"henry.cavill\",\n            \"email\": \"henry.cavill@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ed4f527d6c411bc1dca4\",\n            \"username\": \"henry.cavill2\",\n            \"email\": \"henry.cavill2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "getUsers getAll #2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users?name=&email=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:56:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763c9c09ebf797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"294-26stdDWl9g7K7efq7tgbxZjmiIk\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "d95a845c-2251-4e09"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ab121f04df3a4484f414\",\n            \"username\": \"john.doe\",\n            \"email\": \"john.doe@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620bdcf080b34bc38c16934\",\n            \"username\": \"john.doe2\",\n            \"email\": \"john.doe2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ebdc527d6c411bc1dc8c\",\n            \"username\": \"robert.downey\",\n            \"email\": \"robert.downey@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ec7a527d6c411bc1dc99\",\n            \"username\": \"henry.cavill\",\n            \"email\": \"henry.cavill@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ed4f527d6c411bc1dca4\",\n            \"username\": \"henry.cavill2\",\n            \"email\": \"henry.cavill2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "getUsers query by name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users?name=john&email=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "john"
+								},
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:57:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763cac12b9f797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"104-fHupW4HUJtk7BR83DAE7s/7q5g0\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b4b10093-9571-44e6"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ab121f04df3a4484f414\",\n            \"username\": \"john.doe\",\n            \"email\": \"john.doe@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620bdcf080b34bc38c16934\",\n            \"username\": \"john.doe2\",\n            \"email\": \"john.doe2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "getUsers query by email",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users?name=&email=cavill",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "email",
+									"value": "cavill"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:58:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763cbcb49e1797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"114-/5YkoPSTx9Ef3veL2DD2hu/ZcVc\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "9afe8b12-4600-4ce6"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ec7a527d6c411bc1dc99\",\n            \"username\": \"henry.cavill\",\n            \"email\": \"henry.cavill@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ed4f527d6c411bc1dca4\",\n            \"username\": \"henry.cavill2\",\n            \"email\": \"henry.cavill2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "query by name and email",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users?name=henr&email=cavill",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "henr"
+								},
+								{
+									"key": "email",
+									"value": "cavill"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:59:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763cd7a383e797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"114-/5YkoPSTx9Ef3veL2DD2hu/ZcVc\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "4733f9c3-79c7-4d7f"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ec7a527d6c411bc1dc99\",\n            \"username\": \"henry.cavill\",\n            \"email\": \"henry.cavill@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620ed4f527d6c411bc1dca4\",\n            \"username\": \"henry.cavill2\",\n            \"email\": \"henry.cavill2@gmail.com\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "no result",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/v1/users?name=henrf&email=cavillf",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "henrf"
+								},
+								{
+									"key": "email",
+									"value": "cavillf"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 09:59:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8763cdfd4844797d-SIN"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-EFAlOux7Kcr/ZEgGkn2r+oFAbu4\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3e6253d3-8cf9-4518"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "updateUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": \"6620ab121f04df3a4484f414\",\r\n            \"username\": \"john.doey\",\r\n            \"email\": \"john.doe@gmail.com\",\r\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"6620bdcf080b34bc38c16934\",\r\n            \"username\": \"john.doe3\",\r\n            \"email\": \"john.doe2@gmail.com\",\r\n            \"birthdate\": \"2003-02-20\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/v1/users/update",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "one of object_id not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": \"6620ab121f04df3a4484f416\",\r\n            \"username\": \"john.doey\",\r\n            \"email\": \"john.doe@gmail.com\",\r\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"6620bdcf080b34bc38c16934\",\r\n            \"username\": \"john.doe3\",\r\n            \"email\": \"john.doe2@gmail.com\",\r\n            \"birthdate\": \"2003-02-20\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/update",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-pOcJxKJed03D1zpYavV3ZR1A7TM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 10:34:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620bdcf080b34bc38c16934\",\n            \"email\": \"john.doe2@gmail.com\",\n            \"username\": \"john.doe3\",\n            \"birthdate\": \"2003-02-20T00:00:00.000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "updateUsers ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": \"6620ab121f04df3a4484f414\",\r\n            \"username\": \"john.doey\",\r\n            \"email\": \"john.doe@gmail.com\",\r\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"6620bdcf080b34bc38c16934\",\r\n            \"username\": \"john.doe3\",\r\n            \"email\": \"john.doe2@gmail.com\",\r\n            \"birthdate\": \"2003-02-20\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/v1/users/update",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "261"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"105-YNAQZzTR1EIhor+DdMO5HhtQg10\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 10:34:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6620ab121f04df3a4484f414\",\n            \"email\": \"john.doe@gmail.com\",\n            \"username\": \"john.doey\",\n            \"birthdate\": \"2003-02-22T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"6620bdcf080b34bc38c16934\",\n            \"email\": \"john.doe2@gmail.com\",\n            \"username\": \"john.doe3\",\n            \"birthdate\": \"2003-02-20T00:00:00.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

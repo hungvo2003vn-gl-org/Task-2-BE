@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "CommonJS",
+		"target": "es6",
+		"baseUrl": "src",
+		"outDir": "./dist",
+		"esModuleInterop": true,
+		"alwaysStrict": true,
+		"noImplicitAny": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"paths": {
+			"#~/*": ["./*"]
+		}
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
+}
